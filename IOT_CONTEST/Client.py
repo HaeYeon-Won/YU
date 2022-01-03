@@ -2,7 +2,7 @@
 - Project : Detect car license-plate Client 
 - 일정거리이상 차량이 접근하면 사진을 찍어 Server에 전송 밑 음성 경고
 - Author : Hae-Yeon-Won
-- Date of last update : 2021.12.31.
+- Date of last update : 2021.12.28.
 """
 from serial import Serial
 import cv2
