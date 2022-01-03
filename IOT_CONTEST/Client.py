@@ -55,7 +55,7 @@ def socketsend(client_socket): # 사진 전송
     camera.release()
 
 if __name__ == '__main__':
-    ip= '165.229.185.243'  #ip 주소
+    ip= ''  #ip 주소
     port = 8080  #port 번호
     #소켓 연결
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
