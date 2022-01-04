@@ -9,7 +9,7 @@
 """
 from sys import stdin
 def solution(n):
-    r, c = ord(n[0])-ord('a'), int(n[1])-1
+    r, c = int(n[1])-1, ord(n[0])-ord('a')
     direction=[(1,2), (1,-2), (-1,2), (-1,-2), (2,-1),(2,1),(-2,-1),(-2,1)]
     answer=0
     for pos in direction:
