@@ -22,6 +22,6 @@ solution(n, contain)
 더 큰 식량을 약탈해 오면 된다.
 만약 최소 n칸씩 띄워서 방문해야하는 경우는
 dP 테이블에는 n번 인덱스 까지 contain의 값을 채워놓고
-dP[i]의 값은 max(dP[i-(n+1)+contain[i], dP[i-n] . . .  , dP[i-1])을 하면 될것이다.
+dP[i]의 값은 max(dP[i-(n+1)+contain[i], dP[i-n] . . .  , dP[i-1])가 될것이다.
 
 """
