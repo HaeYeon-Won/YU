@@ -14,8 +14,6 @@ def solution(table):
         for a in range(1, vertex+1):
             for b in range(1, vertex+1):
                 table[a][b]= min(table[a][b], table[a][k]+table[k][b])
-    for i in table:
-        print(i)
     distance = table[1][K] + table[K][X]
     if distance==inf: return -1
     else: return distance
