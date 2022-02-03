@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> Web-based Remote Control of Color</title>
+   </head>
+   <body>
+    <table style = "width:100%; text-align:center;">
+    <H2> Web-based Remote Control of Color </H2>
+     <div>
+        <ul>
+            <label for "Red"> Red  : </label>
+            <input type="range" id="red" name="Red" min="0" max="255" onchange = 'red_change(this)'>
+            <label for="value"> value ( <span id="red_value"> 0 </span> ) </label>
+        </ul>
+        <ul>
+            <label for "Green"> Green : </label>
+            <input type="range" id="green" name="Green" min="0" max="255"  onchange ='green_change(this)'>
+             <label for="value"> value ( <span id="green_value"> 0 </span> ) </label>
+        </ul>
+        <ul>
+            <label for "Blue"> Blue  : </label>
+            <input type="range" id="blue" name="Blue" min="0" max="255"  onchange='blue_change(this)'>
+            <label for="value"> value ( <span id="blue_value"> 0 </span> ) </label>
+        </ul>
+        <ul>
+            <input type="button" value="Reset Color" onCLick="reset_LED_colors();">
+        </ul>
+       </div>
+      </table>
+
+   <script type = "text/javascript">
+function red_change(obj) {    
+    document.getElementById('red_value').innerHTML=obj.value;
+    var request = new XMLHttpRequest ();
+    var cmd = "rc_Color=red "+obj.value;
+    request.open ("POST", "/rc_Color", false);
+    request.setRequestHeader ("Content-Type", "application/x-www-form-urlencoded");
+    request.send (cmd);
+}
+
+function green_change(obj) {
+    document.getElementById('green_value').innerHTML=obj.value;
+    var request = new XMLHttpRequest ();
+    var cmd = "rc_Color=green "+obj.value;
+    request.open ("POST", "/rc_Color", false);
+    request.setRequestHeader ("Content-Type", "application/x-www-form-urlencoded");
+    request.send (cmd);
+}
+
+function blue_change(obj) {    
+    document.getElementById('blue_value').innerHTML=obj.value;
+    var request = new XMLHttpRequest ();
+    var cmd = "rc_Color=blue "+obj.value;
+    request.open ("POST", "/rc_Color", false);
+    request.setRequestHeader ("Content-Type", "application/x-www-form-urlencoded");
+    request.send (cmd);
+}
+
+function reset_LED_colors()
+{
+  document.getElementById('RGB_red_value').innerHTML=0
+  document.getElementById('RGB_green_value').innerHTML=0
+  document.getElementById('RGB_blue_value').innerHTML=0
+  var request = new XMLHttpRequest ();
+  var cmd = "reset_Color=0 0 0";
+  request.open ("POST", "/reset_Color", false);
+  request.setRequestHeader ("Content-Type", "application/x-www-form-urlencoded");
+  request.send (cmd);
+}
+   </script>
+   </body>
+</html>
