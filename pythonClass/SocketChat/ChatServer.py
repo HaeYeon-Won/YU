@@ -1,6 +1,6 @@
 import socket, sys, threading
-from threading import Thread # for testing multi-thread
-from time import sleep #for sleep in thread
+from threading import Thread 
+from time import sleep
 from tkinter import *
 from tkinter import ttk, scrolledtext, END
 hostAddr = ""
