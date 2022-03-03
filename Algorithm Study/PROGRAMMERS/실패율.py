@@ -7,10 +7,8 @@ def solution(N, stages):
     lose_rate=[]
     for i in range(1, N+1):
         div=sum(clear[i:])
-        if div==0:
-            lose_rate.append([i, 0])
-        else:
-            lose_rate.append([i, clear[i]/sum(clear[i:])])
+        if div==0:lose_rate.append([i, 0])
+        else:lose_rate.append([i, clear[i]/sum(clear[i:])])
     lose_rate=sorted(lose_rate, key=lambda x:x[1], reverse=True)
     return list(zip(*lose_rate))[0]
   
