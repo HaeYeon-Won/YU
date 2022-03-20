@@ -1,2 +1,2 @@
 # YU
-my college life
+my college life!
